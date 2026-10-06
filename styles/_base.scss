@@ -1,0 +1,73 @@
+@font-face {
+  font-family: DreamSans;
+  src: url('assets/fonts/Manrope-subset.ttf') format('truetype');
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --paper: #111615;
+  --surface: #1b2220;
+  --ink: #f3f5ed;
+  --muted: #acb8b1;
+  --line: #35403a;
+  --lime: #bef264;
+  --olive: #bef264;
+  --dark: #090e0c;
+  --error: #ffae9e;
+  --radius: 14px;
+  --font: DreamSans, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.65 var(--font); -webkit-font-smoothing: antialiased; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; color: inherit; }
+button, a { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button:disabled { cursor: wait; opacity: .65; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+figure, h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-weight: 800; line-height: 1.16; letter-spacing: -.035em; }
+h2 { font-size: clamp(28px, 3vw, 40px); }
+h3 { font-size: 17px; letter-spacing: -.02em; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--olive); outline-offset: 4px; }
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--olive); outline-offset: 2px; }
+[hidden] { display: none !important; }
+.container { width: min(1240px, calc(100% - 36px)); margin-inline: auto; }
+.icon { width: 24px; height: 24px; flex: none; }
+.eyebrow { color: var(--muted); font-size: 11px; font-weight: 650; line-height: 1.6; letter-spacing: .15em; }
+.section { padding-block: 40px; }
+.section-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 18px; margin-bottom: 22px; }
+.section-header h2 { margin-top: 5px; }
+.section-header p:not(.eyebrow) { margin-top: 8px; color: var(--muted); font-size: 14px; }
+.text-link { display: inline-flex; align-items: center; gap: 14px; font-size: 13px; font-weight: 650; min-height: 44px; }
+.text-link:hover, .text-button:hover { color: var(--olive); }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 22px; min-height: 48px; padding: 12px 20px; border: 1px solid transparent; border-radius: 9px; font-weight: 750; font-size: 14px; line-height: 1.45; transition: background .18s, transform .18s; }
+.button > span { font-size: 20px; font-weight: 500; }
+.button .icon { width: 20px; height: 20px; }
+.button-lime { background: var(--lime); color: #192310; }
+.button-lime:hover { background: #d2ff8b; transform: translateY(-2px); }
+.button-dark { background: var(--dark); color: white; }
+.button-dark:hover { background: #26352c; }
+.button-outline { border-color: #56635b; background: transparent; }
+.button-outline:hover { background: #28322c; }
+.round-button { position: absolute; right: 20px; bottom: 20px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #5b6c60; background: transparent; display: grid; place-items: center; font-size: 21px; }
+.round-button:hover { background: var(--lime); color: #192310; }
+.text-button { border: 0; background: transparent; padding: 0; font: inherit; text-decoration: underline; text-underline-offset: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip-link { position: fixed; top: -80px; left: 16px; z-index: 100; padding: 12px; background: var(--lime); color: #192310; }
+.skip-link:focus { top: 12px; }
+.honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; }
+.noscript-message { padding: 16px; background: var(--lime); color: #192310; text-align: center; }
+.noscript-message a { text-decoration: underline; }
+@media (min-width: 768px) {
+  .container { width: min(1240px, calc(100% - 64px)); }
+  .section { padding-block: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
