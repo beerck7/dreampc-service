@@ -240,7 +240,7 @@
     button.textContent = 'Przygotowywanie…';
     $('#formStatus').textContent = 'Przygotowuję lokalne podsumowanie demo…';
     try {
-      // A short demo delay makes the processing state visible. No network request is made.
+      // Krótkie opóźnienie pokazuje stan przetwarzania w wersji demo.
       await new Promise(resolve => setTimeout(resolve, 350));
       ticket ||= 'DEMO-' + new Date().toISOString().slice(0, 10).replaceAll('-', '') + '-' + [...crypto.getRandomValues(new Uint8Array(6))].map(n => n.toString(16).padStart(2, '0')).join('').toUpperCase();
       receipt = `DreamPC — podsumowanie demonstracyjne ${ticket}\n${new Date().toLocaleString('pl-PL', { timeZone: 'Europe/Warsaw' })}\n\n${summary()}\n\nTryb demo: dane nie zostały wysłane. To nie jest zgłoszenie do naprawy ani zamówienie.\n`;

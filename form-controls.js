@@ -1,5 +1,5 @@
 'use strict';
-// Native values remain the source of truth for validation and submission.
+// Walidacja i podsumowanie korzystają z wartości natywnych pól select.
 (() => {
   const paths = {
     diagnosis: '<circle cx="10" cy="10" r="6"/><path d="m15 15 5 5M10 7v6M7 10h6"/>',

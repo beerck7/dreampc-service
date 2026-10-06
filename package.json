@@ -9,7 +9,7 @@
     "styles:watch": "npm run styles -- --watch",
     "build": "node scripts/build.mjs",
     "test": "npm run styles && node scripts/verify.mjs",
-    "export": "node scripts/export.mjs"
+    "export": "node tools/export.mjs"
   },
   "devDependencies": {
     "axe-core": "4.13.0",

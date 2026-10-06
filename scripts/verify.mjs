@@ -150,7 +150,7 @@ try {
   assert.equal(await page.locator('#buildCategory').innerText(), 'PRACA I NAUKA');
   await page.goto(base + '/privacy.html');
   await checkAccessibility();
-  await page.goto(base + '/materials.html', { waitUntil: 'networkidle' });
+  await page.goto(base + '/tools/materials.html', { waitUntil: 'networkidle' });
   await page.screenshot({ path: path.join(artifacts, 'brand-mobile.png'), fullPage: true });
   assert.equal(await page.evaluate(() => [...document.images].every(img => img.complete && img.naturalWidth > 0)), true);
   assert.deepEqual(submissions, [], 'No form data leaves the browser');

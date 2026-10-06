@@ -5,7 +5,7 @@ import * as sass from 'sass';
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const dist = path.resolve(root, 'dist');
-// Only the generated directory inside this project may be cleaned.
+// Usuwamy wyłącznie katalog wynikowy wewnątrz projektu.
 if (path.relative(root, dist) !== 'dist') throw new Error('Nieprawidłowy katalog wynikowy.');
 await rm(dist, { recursive: true, force: true });
 await mkdir(path.join(dist, 'assets/fonts'), { recursive: true });
